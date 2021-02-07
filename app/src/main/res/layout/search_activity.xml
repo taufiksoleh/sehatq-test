@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_36x"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/space_16x"
+                app:cardCornerRadius="@dimen/space_16x"
+                app:cardElevation="1dp">
+
+                <EditText
+                    android:id="@+id/search_text"
+                    android:focusable="true"
+                    android:inputType="text"
+                    android:textSize="@dimen/_10ssp"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:paddingHorizontal="@dimen/_16sdp"
+                    android:background="@android:color/transparent"
+                    android:layout_height="@dimen/space_36x"/>
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_recipes_list"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/pb_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/font_32x"
+        android:textStyle="italic|bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,12 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-platform-android'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion '29.0.3'
     defaultConfig {
-        applicationId 'com.eltaher.task'
+        applicationId 'com.sehatq.app'
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
@@ -143,7 +144,7 @@ dependencies {
     implementation "androidx.multidex:multidex:$multiDexVersion"
 
     //Mockk
-//    androidTestImplementation "io.mockk:mockk-android:$mockVersion"
+    androidTestImplementation "io.mockk:mockk-android:$mockVersion"
     testImplementation "io.mockk:mockk:$mockVersion"
 
     //coroutines
@@ -152,4 +153,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionsVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleKTXVersion"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleKTXVersion"
+
+    // dimen size SDP and SSP
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    //Firebase
+    implementation platform('com.google.firebase:firebase-bom:26.4.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

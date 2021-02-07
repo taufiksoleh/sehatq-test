@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_8x">
+
+        <ImageView
+            android:id="@+id/iv_recipe_item_image"
+            android:layout_width="@dimen/image_view_width"
+            android:layout_height="@dimen/image_view_height"
+            app:srcCompat="@drawable/ic_logo"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/space_8x"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_recipe_item_image"
+            app:layout_constraintLeft_toRightOf="@+id/iv_recipe_item_image"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_recipe_item_image">
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TextBold"
+                android:text="@string/produt_name"
+                android:textSize="@dimen/_14ssp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/Text"
+                android:id="@+id/tv_caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_price"
+                android:textSize="@dimen/_12ssp"
+                android:layout_marginTop="@dimen/space_16x"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

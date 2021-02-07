@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_recipe_item"
+    android:layout_width="@dimen/_60sdp"
+    android:layout_height="@dimen/_80sdp"
+    android:layout_marginHorizontal="@dimen/_10sdp"
+    app:cardElevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_recipe_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@color/white"
+            android:scaleType="centerInside"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_logo" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/TextBold"
+            android:textSize="@dimen/_10ssp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            tools:text="@string/produt_name" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
